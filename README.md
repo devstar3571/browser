@@ -1,428 +1,68 @@
-Contribution: 2021-12-13 00:00
+# What the fork?
 
-Contribution: 2021-12-13 00:01
+This is my fork of the Bitwarden Browser Extension, to add the features I wanted, for example, the popover to select multiple accounts when focusing on a login form input.
 
-Contribution: 2021-12-13 00:02
+![](./demo.gif)
 
-Contribution: 2021-12-13 00:03
+If you somehow find this repository, and liked it, **please do not install it**, you have no reason to trust me, but you're welcomed to fork the addon yourself and copy whatever change I made here to your own fork.
 
-Contribution: 2021-12-13 00:04
+---
 
-Contribution: 2021-12-13 00:05
+[![Github Workflow build on master](https://github.com/bitwarden/browser/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/browser/actions/workflows/build.yml?query=branch:master)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-browser/localized.svg)](https://crowdin.com/project/bitwarden-browser)
+[![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
-Contribution: 2021-12-13 00:06
+# Bitwarden Browser Extension
 
-Contribution: 2021-12-13 00:07
+<a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/3C4iKO0.png" width="64" height="64"></a>
+<a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="https://imgur.com/ihXsdDO.png" width="64" height="64"></a>
+<a href="https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl" target="_blank"><img src="https://imgur.com/vMcaXaw.png" width="64" height="64"></a>
+<a href="https://addons.opera.com/extensions/details/bitwarden-free-password-manager/" target="_blank"><img src="https://imgur.com/nSJ9htU.png" width="64" height="64"></a>
+<a href="https://bitwarden.com/download/" target="_blank"><img src="https://imgur.com/ENbaWUu.png" width="64" height="64"></a>
+<a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/EuDp4vP.png" width="64" height="64"></a>
+<a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/z8yjLZ2.png" width="64" height="64"></a>
+<a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="https://imgur.com/MQYBSrD.png" width="64" height="64"></a>
 
-Contribution: 2021-12-13 00:08
+The Bitwarden browser extension is written using the Web Extension API and Angular.
 
-Contribution: 2021-12-13 00:09
+![](https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/browser-chrome.png "My Vault")
 
-Contribution: 2021-12-13 00:10
+# Build/Run
 
-Contribution: 2021-12-13 00:11
+**Requirements**
 
-Contribution: 2021-12-13 00:12
+- [Node.js](https://nodejs.org) v14.17 or greater
+- NPM v7
+- [Gulp](https://gulpjs.com/) (`npm install --global gulp-cli`)
+- Chrome (preferred), Opera, or Firefox browser
 
-Contribution: 2021-12-13 00:13
+**Run the app**
 
-Contribution: 2021-12-13 00:14
+```
+npm install
+npm run build:watch
+```
 
-Contribution: 2021-12-14 00:00
+You can now load the extension into your browser through the browser's extension tools page:
 
-Contribution: 2021-12-14 00:01
+- Chrome/Opera:
+  1. Type `chrome://extensions` in your address bar to bring up the extensions page.
+  2. Enable developer mode (toggle switch)
+  3. Click the "Load unpacked extension" button, navigate to the `build` folder of your local extension instance, and click "Ok".
+- Firefox
+  1. Type `about:debugging` in your address bar to bring up the add-ons page.
+  2. Click the `Load Temporary Add-on` button, navigate to the `build/manifest.json` file, and "Open".
 
-Contribution: 2021-12-14 00:02
+**Desktop communication**
 
-Contribution: 2021-12-14 00:03
+Native Messaging (communication between the desktop application and browser extension) works by having the browser start a lightweight proxy baked into our desktop application.
 
-Contribution: 2021-12-14 00:04
+Out of the box, the desktop application can only communicate with the production browser extension. When you enable browser integration in the desktop application, the application generates manifests which contain the production IDs of the browser extensions. To enable communication between the desktop application and development versions of browser extensions, add the development IDs to the `allowed_extensions` section of the corresponding manifests.
 
-Contribution: 2021-12-14 00:05
+Manifests are located in the `browser` subdirectory of the Bitwarden configuration directory. For instance, on Windows the manifests are located at `C:\Users\<user>\AppData\Roaming\Bitwarden\browsers` and on macOS these are in `Application Support` for various browsers ([for example](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#manifest_location)). Note that disabling the desktop integration will delete the manifests, and the files will need to be updated again.
 
-Contribution: 2021-12-15 00:00
+# Contribute
 
-Contribution: 2021-12-15 00:01
+Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
-Contribution: 2021-12-15 00:02
-
-Contribution: 2021-12-15 00:03
-
-Contribution: 2021-12-15 00:04
-
-Contribution: 2021-12-15 00:05
-
-Contribution: 2021-12-16 00:00
-
-Contribution: 2021-12-16 00:01
-
-Contribution: 2021-12-16 00:02
-
-Contribution: 2021-12-16 00:03
-
-Contribution: 2021-12-20 00:00
-
-Contribution: 2021-12-20 00:01
-
-Contribution: 2021-12-20 00:02
-
-Contribution: 2021-12-20 00:03
-
-Contribution: 2021-12-20 00:04
-
-Contribution: 2021-12-20 00:05
-
-Contribution: 2021-12-20 00:06
-
-Contribution: 2021-12-20 00:07
-
-Contribution: 2021-12-20 00:08
-
-Contribution: 2021-12-20 00:09
-
-Contribution: 2021-12-22 00:00
-
-Contribution: 2021-12-22 00:01
-
-Contribution: 2021-12-22 00:02
-
-Contribution: 2021-12-22 00:03
-
-Contribution: 2021-12-22 00:04
-
-Contribution: 2021-12-22 00:05
-
-Contribution: 2021-12-22 00:06
-
-Contribution: 2021-12-22 00:07
-
-Contribution: 2021-12-22 00:08
-
-Contribution: 2021-12-22 00:09
-
-Contribution: 2021-12-22 00:10
-
-Contribution: 2021-12-22 00:11
-
-Contribution: 2021-12-24 00:00
-
-Contribution: 2021-12-27 00:00
-
-Contribution: 2021-12-27 00:01
-
-Contribution: 2021-12-27 00:02
-
-Contribution: 2021-12-27 00:03
-
-Contribution: 2021-12-27 00:04
-
-Contribution: 2021-12-27 00:05
-
-Contribution: 2021-12-27 00:06
-
-Contribution: 2021-12-27 00:07
-
-Contribution: 2021-12-27 00:08
-
-Contribution: 2021-12-28 00:00
-
-Contribution: 2021-12-28 00:01
-
-Contribution: 2021-12-28 00:02
-
-Contribution: 2021-12-28 00:03
-
-Contribution: 2021-12-28 00:04
-
-Contribution: 2021-12-28 00:05
-
-Contribution: 2021-12-29 00:00
-
-Contribution: 2021-12-29 00:01
-
-Contribution: 2021-12-29 00:02
-
-Contribution: 2021-12-29 00:03
-
-Contribution: 2021-12-29 00:04
-
-Contribution: 2021-12-29 00:05
-
-Contribution: 2021-12-29 00:06
-
-Contribution: 2021-12-29 00:07
-
-Contribution: 2021-12-29 00:08
-
-Contribution: 2021-12-29 00:09
-
-Contribution: 2021-12-30 00:00
-
-Contribution: 2021-12-30 00:01
-
-Contribution: 2021-12-30 00:02
-
-Contribution: 2021-12-30 00:03
-
-Contribution: 2021-12-30 00:04
-
-Contribution: 2021-12-30 00:05
-
-Contribution: 2021-12-30 00:06
-
-Contribution: 2021-12-30 00:07
-
-Contribution: 2021-12-30 00:08
-
-Contribution: 2021-12-30 00:09
-
-Contribution: 2021-12-30 00:10
-
-Contribution: 2021-12-30 00:11
-
-Contribution: 2021-12-31 00:00
-
-Contribution: 2021-12-31 00:01
-
-Contribution: 2021-12-31 00:02
-
-Contribution: 2021-12-31 00:03
-
-Contribution: 2021-12-31 00:04
-
-Contribution: 2021-12-31 00:05
-
-Contribution: 2022-01-03 00:00
-
-Contribution: 2022-01-03 00:01
-
-Contribution: 2022-01-03 00:02
-
-Contribution: 2022-01-03 00:03
-
-Contribution: 2022-01-06 00:00
-
-Contribution: 2022-01-06 00:01
-
-Contribution: 2022-01-06 00:02
-
-Contribution: 2022-01-06 00:03
-
-Contribution: 2022-01-06 00:04
-
-Contribution: 2022-01-06 00:05
-
-Contribution: 2022-01-07 00:00
-
-Contribution: 2022-01-07 00:01
-
-Contribution: 2022-01-10 00:00
-
-Contribution: 2022-01-10 00:01
-
-Contribution: 2022-01-10 00:02
-
-Contribution: 2022-01-12 00:00
-
-Contribution: 2022-01-12 00:01
-
-Contribution: 2022-01-12 00:02
-
-Contribution: 2022-01-12 00:03
-
-Contribution: 2022-01-13 00:00
-
-Contribution: 2022-01-13 00:01
-
-Contribution: 2022-01-13 00:02
-
-Contribution: 2022-01-13 00:03
-
-Contribution: 2022-01-14 00:00
-
-Contribution: 2022-01-14 00:01
-
-Contribution: 2022-01-19 00:00
-
-Contribution: 2022-01-19 00:01
-
-Contribution: 2022-01-19 00:02
-
-Contribution: 2022-01-19 00:03
-
-Contribution: 2022-01-21 00:00
-
-Contribution: 2022-01-21 00:01
-
-Contribution: 2022-01-21 00:02
-
-Contribution: 2022-01-21 00:03
-
-Contribution: 2022-01-21 00:04
-
-Contribution: 2022-01-21 00:05
-
-Contribution: 2022-01-21 00:06
-
-Contribution: 2022-01-21 00:07
-
-Contribution: 2022-01-24 00:00
-
-Contribution: 2022-01-24 00:01
-
-Contribution: 2022-01-24 00:02
-
-Contribution: 2022-01-24 00:03
-
-Contribution: 2022-01-24 00:04
-
-Contribution: 2022-01-24 00:05
-
-Contribution: 2022-01-24 00:06
-
-Contribution: 2022-01-24 00:07
-
-Contribution: 2022-01-24 00:08
-
-Contribution: 2022-01-24 00:09
-
-Contribution: 2022-01-24 00:10
-
-Contribution: 2022-01-24 00:11
-
-Contribution: 2022-01-25 00:00
-
-Contribution: 2022-01-25 00:01
-
-Contribution: 2022-01-25 00:02
-
-Contribution: 2022-01-25 00:03
-
-Contribution: 2022-01-25 00:04
-
-Contribution: 2022-01-25 00:05
-
-Contribution: 2022-01-25 00:06
-
-Contribution: 2022-01-25 00:07
-
-Contribution: 2022-01-25 00:08
-
-Contribution: 2022-01-25 00:09
-
-Contribution: 2022-01-27 00:00
-
-Contribution: 2022-01-27 00:01
-
-Contribution: 2022-01-27 00:02
-
-Contribution: 2022-01-27 00:03
-
-Contribution: 2022-01-27 00:04
-
-Contribution: 2022-01-27 00:05
-
-Contribution: 2022-01-27 00:06
-
-Contribution: 2022-01-27 00:07
-
-Contribution: 2022-01-27 00:08
-
-Contribution: 2022-01-27 00:09
-
-Contribution: 2022-01-27 00:10
-
-Contribution: 2022-01-31 00:00
-
-Contribution: 2022-01-31 00:01
-
-Contribution: 2022-01-31 00:02
-
-Contribution: 2022-02-01 00:00
-
-Contribution: 2022-02-01 00:01
-
-Contribution: 2022-02-01 00:02
-
-Contribution: 2022-02-01 00:03
-
-Contribution: 2022-02-01 00:04
-
-Contribution: 2022-02-01 00:05
-
-Contribution: 2022-02-03 00:00
-
-Contribution: 2022-02-03 00:01
-
-Contribution: 2022-02-03 00:02
-
-Contribution: 2022-02-03 00:03
-
-Contribution: 2022-02-03 00:04
-
-Contribution: 2022-02-03 00:05
-
-Contribution: 2022-02-03 00:06
-
-Contribution: 2022-02-03 00:07
-
-Contribution: 2022-02-03 00:08
-
-Contribution: 2022-02-03 00:09
-
-Contribution: 2022-02-04 00:00
-
-Contribution: 2022-02-04 00:01
-
-Contribution: 2022-02-04 00:02
-
-Contribution: 2022-02-04 00:03
-
-Contribution: 2022-02-04 00:04
-
-Contribution: 2022-02-04 00:05
-
-Contribution: 2022-02-04 00:06
-
-Contribution: 2022-02-04 00:07
-
-Contribution: 2022-02-04 00:08
-
-Contribution: 2022-02-04 00:09
-
-Contribution: 2022-02-04 00:10
-
-Contribution: 2022-02-04 00:11
-
-Contribution: 2022-02-04 00:12
-
-Contribution: 2022-02-04 00:13
-
-Contribution: 2022-02-04 00:14
-
-Contribution: 2022-02-07 00:00
-
-Contribution: 2022-02-07 00:01
-
-Contribution: 2022-02-07 00:02
-
-Contribution: 2022-02-07 00:03
-
-Contribution: 2022-02-07 00:04
-
-Contribution: 2022-02-07 00:05
-
-Contribution: 2022-02-07 00:06
-
-Contribution: 2022-02-07 00:07
-
-Contribution: 2022-02-07 00:08
-
-Contribution: 2022-02-07 00:09
-
-Contribution: 2022-02-07 00:10
-
-Contribution: 2022-02-07 00:11
-
-Contribution: 2022-02-07 00:12
-
+Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
